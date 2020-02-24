@@ -1,0 +1,56 @@
+graph MyMainProcessor  [[ main ]]
+{
+    output stream float out;
+    
+    let
+    {
+        sine = SineWaveOsc;
+        phaseInv = PhaseInvert;
+    }
+
+    connection
+    {        
+        //inphase
+        sine.out -> out;
+
+        //outphase
+        sine.out -> phaseInv.in;
+        phaseInv.out -> out;
+    }
+}
+
+//Sine wave oscillator
+processor SineWaveOsc()
+{
+    output stream float out; 
+
+    void run()
+    {
+        let beepFrequency = 440.0f;
+        let phaseIncrement = float (beepFrequency * twoPi * processor.period);
+        float phase = 0;
+
+        loop
+        {
+            out << sin(phase);
+            phase = addModulo2Pi (phase, phaseIncrement);
+            advance();
+       }
+    }
+}
+
+// Phase invert
+processor PhaseInvert
+{
+    input stream float in;
+    output stream float out;
+
+    void run()
+    {
+        loop
+        {
+            out << in * -1.0f;
+            advance();
+        }
+    }
+}
