@@ -1,0 +1,36 @@
+processor Delay  [[ main ]]
+{
+    input  stream float<2> audioIn;//Stereo In
+    output stream float<2> audioOut;//Stereo Out
+
+    input event
+    {
+        float delayLength    [[ min: 0,  max: 1000, init:  50,  name: "Length",   unit: "ms", step: 1 ]];        
+    }
+
+    event delayLength (float delayMs)
+    {
+        let delaySamples = max (1, int (processor.frequency * (delayMs / 1000.0f)));
+
+        readPos = writePos - delaySamples;
+    }
+
+    let maxDelayLength = 100000;
+
+    float[maxDelayLength] buffer;
+    wrap<maxDelayLength> readPos, writePos;
+
+    void run()
+    {
+        loop
+        {
+            buffer[writePos] = audioIn;
+            audioOut << buffer[readPos];
+
+            ++readPos;
+            ++writePos;
+
+            advance();
+        }
+    }
+}

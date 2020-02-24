@@ -1,0 +1,12 @@
+{
+  "soulPatchV1": {
+    "ID": "dl",
+    "version": "1.0",
+    "name": "DelayLine",
+    "description": "Simple delay.",
+    "category": "fx",
+    "manufacturer": "Akiyuki Okayasu",
+    "isInstrument": false,
+    "source": "DelayLine.soul"
+  }
+}
