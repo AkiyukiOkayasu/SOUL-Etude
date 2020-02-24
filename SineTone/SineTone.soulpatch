@@ -1,0 +1,12 @@
+{
+  "soulPatchV1": {
+    "ID": "dl",
+    "version": "1.0",
+    "name": "SineTone",
+    "description": "Simple sine tone.",
+    "category": "instrument",
+    "manufacturer": "Akiyuki Okayasu",
+    "isInstrument": false,
+    "source": "SineTone.soul"
+  }
+}

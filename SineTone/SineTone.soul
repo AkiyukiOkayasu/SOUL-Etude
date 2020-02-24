@@ -1,0 +1,25 @@
+//Sine wave oscillator
+processor SineWaveOsc() [[ main ]]
+{
+    output stream float out;
+    input event float beepFreq [[min: 20, max: 10000, init: 440, name: "Frequency", unit: "Hz", step: 0.01]];
+
+    event beepFreq (float freq)
+    {        
+        phaseIncrement = float(freq * twoPi * processor.period);
+    }
+
+    float phaseIncrement;
+
+    void run()
+    {                
+        float phase = 0;
+
+        loop
+        {            
+            out << sin(phase);
+            phase = addModulo2Pi (phase, phaseIncrement);
+            advance();
+       }
+    }
+}
