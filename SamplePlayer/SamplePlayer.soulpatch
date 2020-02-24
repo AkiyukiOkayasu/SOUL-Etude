@@ -1,0 +1,15 @@
+{
+  "soulPatchV1": {
+    "ID": "dl",
+    "version": "1.0",
+    "name": "SamplePlayer",
+    "description": "Simple PCM sample player.",
+    "category": "instrument",
+    "manufacturer": "Akiyuki Okayasu",
+    "isInstrument": false,
+    "source": "SamplePlayer.soul",
+    "externals": {
+        "SamplePlayer::sample" : "sample.wav"
+    }
+  }
+}

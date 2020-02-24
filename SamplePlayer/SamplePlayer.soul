@@ -1,0 +1,18 @@
+processor SamplePlayer [[main]]
+{
+    output stream float<2> audioOut;//Stereo output
+
+    external soul::audio_samples::Stereo sample;
+
+    void run()
+    {
+        var index = 0;
+
+        loop
+        {
+            audioOut << sample.frames.at(index);
+            index = wrap(index+1, sample.frames.size);
+            advance();
+        }
+    }
+}
