@@ -17,7 +17,7 @@ processor Delay  [[ main ]]
 
     let maxDelayLength = 100000;
 
-    float[maxDelayLength] buffer;
+    float<2>[maxDelayLength] buffer;
     wrap<maxDelayLength> readPos, writePos;
 
     void run()
