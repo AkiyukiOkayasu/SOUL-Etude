@@ -1,0 +1,26 @@
+processor Delay  [[ main ]]
+{
+    input  stream float audioIn;//Monoral In
+    output stream float audioOut;//Monoral Out
+
+    input event
+    {
+        float drive [[ min: 1,  max: 100, init:  1,  name: "drive",   unit: "amp", step: 0.1 ]];
+    }    
+
+    event drive (float drive)
+    {
+        gain = drive;
+    }
+
+    float gain;
+
+    void run()
+    {
+        loop
+        {            
+            audioOut << tanh(audioIn * gain);
+            advance();
+        }
+    }
+}
