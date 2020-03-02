@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.AmbisonicsA2B",
+        "version":          "0.1",
+        "name":             "AmbisonicsA2B",
+        "description":      "This is a SOUL Patch called AmbisonicsA2B!",
+        "category":         "effect",
+        "manufacturer":     "Your Company Name",
+        "isInstrument":     "false",
+
+        "source":           [ "AmbisonicsA2B.soul" ],
+    }
+}

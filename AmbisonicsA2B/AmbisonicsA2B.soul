@@ -1,0 +1,39 @@
+
+/**
+    This is an auto-generated SOUL patch template.
+    This example code simply performs a simple gain between its input
+    and output. Now it's your turn to build this up into a real effect!
+*/
+processor AmbisonicsA2B  [[main]]
+{
+    input stream float<4> audioIn;
+    output stream float<4> audioOut;
+
+    float x_apex, y_apex, z_apex, w_apex;
+    float flu, frd, bld, bru;
+
+    void run()
+    {
+        loop
+        {
+            flu = audioIn[0];
+            frd = audioIn[1];
+            bld = audioIn[2];
+            bru = audioIn[3];
+
+            w_apex = audioIn.sum();
+            x_apex = flu + frd - bld - bru;
+            y_apex = flu - frd + bld - bru;
+            z_apex = flu - frd - bld + bru;
+
+            // TODO
+            // Impliment equalization: Convert WXYZ_apex to WXYZ
+            // http://pcfarina.eng.unipr.it/Public/B-format/A2B-conversion/A2B.htm
+
+            // Channel layout: ACN   
+            float<4> out = (w_apex, y_apex, z_apex, x_apex);
+            audioOut << out;
+            advance();
+        }
+    }
+}
