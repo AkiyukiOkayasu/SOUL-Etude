@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.SineMonoSynth",
+        "version":          "0.1",
+        "name":             "SineMonoSynth",
+        "description":      "This is a SOUL Patch called SineMonoSynth!",
+        "category":         "synth",
+        "manufacturer":     "Akiyuki Okayasu",
+        "isInstrument":     "true",
+
+        "source":           [ "SineMonoSynth.soul" ],
+    }
+}
