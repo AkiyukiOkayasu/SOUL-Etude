@@ -3,13 +3,19 @@ processor Overdrive  [[ main ]]
     input  stream float audioIn;//Monoral In
     output stream float audioOut;//Monoral Out
 
-    input value float drive [[ min: 1,  max: 100, init:  1,  name: "drive",   unit: "amp", step: 0.1 ]];    
+    input event float drive [[ min: 0,  max: 20, init:  0,  name: "drive",   unit: "dB", step: 0.1 ]];
+    var gain = 1.0f;
+
+    event drive(float d)
+    {
+        gain = soul::dBtoGain(d);
+    }
 
     void run()
     {
         loop
         {            
-            audioOut << tanh(audioIn * drive);
+            audioOut << tanh(audioIn * gain);
             advance();
         }
     }
