@@ -1,27 +1,23 @@
-
-/**
-    This is an auto-generated SOUL patch template.
-    This example code simply performs a simple gain between its input
-    and output. Now it's your turn to build this up into a real effect!
+/* 
+SOUL v0.8 debug log 
+Reference: https://forum.juce.com/t/debugging/36385/4
 */
-processor Logger  [[main]]
-{
-    input stream float audioIn;
-    output stream float audioOut;
 
-    input stream float gainDb  [[ name: "Gain", min: -60.0, max: 10.0, init: 0, step: 0.1, slewRate: 200.0 ]];
+processor Logger  [[main]]
+{    
+    output event int intLogger;
+    output event float floatLogger;
+    output event string stringLogger;
 
     void run()
     {
-
-        // soul::Logger::log("hoge", "fuga");
-        // soul::log("hoge");        
-        loop
-        {
-            let gain = soul::dBtoGain (gainDb);
-
-            audioOut << audioIn * gain;
-            advance();
-        }
+        loop(10000) advance();
+        stringLogger << "Hello";
+        loop(10000) advance();
+        stringLogger << "World";
+        loop(10000) advance();
+        intLogger << 123;
+        loop(10000) advance();
+        floatLogger << 3.14f;
     }
 }
