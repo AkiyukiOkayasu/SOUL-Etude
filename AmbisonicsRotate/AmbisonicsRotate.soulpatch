@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.AmbisonicsRotate",
+        "version":          "0.1",
+        "name":             "AmbisonicsRotate",
+        "description":      "This is a SOUL Patch called AmbisonicsRotate!",
+        "category":         "effect",
+        "manufacturer":     "Akiyuki Okayasu",
+        "isInstrument":     "false",
+
+        "source":           [ "AmbisonicsRotate.soul" ],
+    }
+}

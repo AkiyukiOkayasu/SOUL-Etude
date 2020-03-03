@@ -1,0 +1,40 @@
+
+/**
+    This is an auto-generated SOUL patch template.
+    This example code simply performs a simple gain between its input
+    and output. Now it's your turn to build this up into a real effect!
+*/
+processor AmbisonicsRotate  [[main]]
+{
+    input stream float<4> audioIn;
+    output stream float<4> audioOut;
+
+    input event float azimuthInDeg [[min: -180, max: 180, init: 0, name: "Azimuth", unit:"deg.", step: 0.1]];
+
+    var azimuth = 0.0f;
+    let pi = 3.14f;
+    float w, x, y, z = 0.0f;
+
+    event azimuthInDeg(float deg)
+    {
+        azimuth = deg / 180.0f * pi;
+    }
+
+    void run()
+    {        
+        loop
+        {
+            w = audioIn[0];
+            y = audioIn[1];
+            z = audioIn[2];
+            x = audioIn[3];
+
+            x = cos(azimuth) * x - sin(azimuth) * x;
+            y = sin(azimuth) * y + cos(azimuth) * y;
+
+            float<4> out = (w, y, z, x);
+            audioOut << out;
+            advance();
+        }
+    }
+}
