@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.Logger",
+        "version":          "0.1",
+        "name":             "Logger",
+        "description":      "This is a SOUL Patch called Logger!",
+        "category":         "effect",
+        "manufacturer":     "Akiyuki Okayasu",
+        "isInstrument":     "false",
+
+        "source":           [ "Logger.soul" ],
+    }
+}
