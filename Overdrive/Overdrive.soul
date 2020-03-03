@@ -14,7 +14,8 @@ processor Overdrive  [[ main ]]
     void run()
     {
         loop
-        {            
+        {                        
+            // tanh() is not supported vector in SOUL v0.8
             audioOut << tanh(audioIn * gain);
             advance();
         }
