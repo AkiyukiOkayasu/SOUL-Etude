@@ -9,7 +9,7 @@ processor AmbisonicsRotate  [[main]]
     input stream float<4> audioIn;
     output stream float<4> audioOut;
 
-    input event float azimuthInDeg [[min: -180, max: 180, init: 0, name: "Azimuth", unit:"deg.", step: 0.1]];
+    input event float azimuthInDeg [[min: 180, max: -180, init: 0, name: "Azimuth", unit:"deg.", step: 0.1]];
 
     var azimuth = 0.0f;
     let pi = 3.14f;
@@ -17,7 +17,12 @@ processor AmbisonicsRotate  [[main]]
 
     event azimuthInDeg(float deg)
     {
-        azimuth = deg / 180.0f * pi;
+        azimuth = deg2rad(deg);
+    }
+
+    float deg2rad(float deg) 
+    {
+        return deg * (pi/180.0);
     }
 
     void run()
@@ -29,8 +34,8 @@ processor AmbisonicsRotate  [[main]]
             z = audioIn[2];
             x = audioIn[3];
 
-            x = cos(azimuth) * x - sin(azimuth) * x;
-            y = sin(azimuth) * y + cos(azimuth) * y;
+            x = cos(azimuth) * x - sin(azimuth) * y;
+            y = sin(azimuth) * x + cos(azimuth) * y;
 
             float<4> out = (w, y, z, x);
             audioOut << out;
