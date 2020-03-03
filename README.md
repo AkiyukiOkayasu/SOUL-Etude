@@ -7,7 +7,7 @@ Sine tone generator with GUI frequency controll.
 ### [WhiteNoise](WhiteNoise)
 White noise generator using soul::noise.
 
-## [Logger](Logger)
+### [Logger](Logger)
 Debug log example.
 
 ### [PhaseInvert](PhaseInvert)
