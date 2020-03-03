@@ -1,0 +1,20 @@
+
+/**
+    This is an auto-generated SOUL patch template.
+    This example code simply performs a simple gain between its input
+    and output. Now it's your turn to build this up into a real effect!
+*/
+graph WhiteNoise  [[main]]
+{
+    output stream float audioOut;
+
+    let noise = soul::noise::White;
+    // let noise = soul::noise::Pink;
+    // let noise = soul::noise::Brown;
+
+
+    connection
+    {                
+        noise.out -> audioOut;
+    }
+}
