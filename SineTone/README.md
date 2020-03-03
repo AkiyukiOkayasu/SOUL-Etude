@@ -1,5 +1,5 @@
 # Sine tone  
-Simplest sine tone example.  
+Sine tone generator with GUI frequency controll.  
 
 ## Compile  
 ```bash
