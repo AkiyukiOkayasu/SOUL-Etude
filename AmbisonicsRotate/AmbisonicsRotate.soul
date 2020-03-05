@@ -9,7 +9,7 @@ processor AmbisonicsRotate  [[main]]
     input stream float<4> audioIn;
     output stream float<4> audioOut;
 
-    input event float azimuthInDeg [[min: 180, max: -180, init: 0, name: "Azimuth", unit:"deg.", step: 0.1]];
+    input event float azimuthInDeg [[min: -180, max: 180, init: 0, name: "Azimuth", unit:"deg.", step: 0.1]];
 
     var azimuth = 0.0f;
     let pi = 3.14f;
