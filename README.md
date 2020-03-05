@@ -29,4 +29,4 @@ Variable delay with GUI delay controll.
 **Work in progresss**: Ambisonics A-format to B-format convertor.
 
 ### [AmbisonicsRotate](AmbisonicsRotate)
-**Work in progress**: Ambisonics scene rotate.
+Ambisonics scene rotate.
