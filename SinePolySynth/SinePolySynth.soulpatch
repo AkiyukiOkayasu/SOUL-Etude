@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.SinePolySynth",
+        "version":          "0.1",
+        "name":             "SinePolySynth",
+        "description":      "This is a SOUL Patch called SinePolySynth!",
+        "category":         "synth",
+        "manufacturer":     "Your Company Name",
+        "isInstrument":     "true",
+
+        "source":           [ "SinePolySynth.soul" ],
+    }
+}
