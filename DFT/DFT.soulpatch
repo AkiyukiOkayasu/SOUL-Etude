@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.DFT",
+        "version":          "0.1",
+        "name":             "DFT",
+        "description":      "This is a SOUL Patch called DFT!",
+        "category":         "effect",
+        "manufacturer":     "Your Company Name",
+        "isInstrument":     "false",
+
+        "source":           [ "DFT.soul" ],
+    }
+}

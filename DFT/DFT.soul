@@ -1,0 +1,25 @@
+processor DFT  [[main]]
+{
+    input stream float audioIn;
+    output stream float audioOut;
+
+    let fftSize = 256;
+    float[fftSize * 2] infft;
+    float[fftSize * 2] outfft;
+    wrap<fftSize> wrappedIndex;
+
+    void run()
+    {
+        loop
+        {            
+            infft[wrappedIndex] = audioIn;
+            if (wrappedIndex == fftSize-1 ) {
+                soul::DFT::forward<float[fftSize*2]>(infft, outfft);
+            }
+            wrappedIndex += 1;
+
+            audioOut << audioIn;
+            advance();
+        }
+    }
+}
