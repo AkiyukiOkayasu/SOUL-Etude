@@ -13,13 +13,16 @@ processor DFT  [[main]]
         loop
         {            
             infft[wrappedIndex] = audioIn;
-            if (wrappedIndex == fftSize-1 ) {
-                soul::DFT::forward<float[fftSize*2]>(infft, outfft);
-            }
+            if (wrappedIndex == fftSize-1 ) dft();
             wrappedIndex += 1;
 
             audioOut << audioIn;
             advance();
         }
+    }
+
+    void dft()
+    {
+        soul::DFT::forward<float[fftSize*2]>(infft, outfft);
     }
 }
