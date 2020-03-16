@@ -19,6 +19,9 @@ Tanh overdrive.
 ### [SineMonoSynth](SineMonoSynth)
 Monophonic MIDI synthesizer.
 
+### [SinePolySynth](SinePolySynth)
+8voice polyphonic MIDI synthesizer.
+
 ### [SamplePlayer](SamplePlayer)
 WAV sample player.
 
