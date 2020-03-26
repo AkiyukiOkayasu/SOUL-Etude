@@ -1,0 +1,67 @@
+graph HaasEffect  [[main]]
+{
+    input stream float audioIn;
+    output stream float<2> audioOut;
+
+    input 
+    {
+        DelayParams.delayParamIn [[ min: 0, max: 10, init: 1, name: "Rch Delay", unit: "ms", step: 0.01 ]];
+    }
+
+    let delay = Delay * 8;// 8x oversamples
+
+    connection 
+    {
+        DelayParams.delayParamOut -> delay.delaySamples;
+        audioIn -> delay.audioIn;
+        delay.audioOut -> audioOut;
+    }
+}
+
+processor DelayParams
+{
+    input event float delayParamIn;
+    output event float delayParamOut;
+
+    event delayParamIn (float d)
+    {
+        delayParamOut << d;
+    }
+
+}
+processor Delay
+{
+    input  stream float audioIn;//Mono In
+    output stream float<2> audioOut;//Stereo Out Lch: input signal without delay, Rch input signal with delay
+
+    input event float delaySamples;
+
+    event delaySamples(float delayMs)
+    {
+        let delaySamples = max (1, int (processor.frequency * (delayMs / 1000.0f)));
+        readPos = writePos - delaySamples;
+    }
+
+
+    let maxDelayLength = 15360;//10ms when BaseSampleRate: 192kHz with 8x oversampling
+
+    float[maxDelayLength] buffer;
+    wrap<maxDelayLength> readPos, writePos;
+
+    float<2> out;
+
+    void run()
+    {
+        loop
+        {
+            buffer[writePos] = audioIn;
+            out = float<2> (audioIn, buffer[readPos]);
+            audioOut << out;
+
+            ++readPos;
+            ++writePos;
+
+            advance();
+        }
+    }
+}
