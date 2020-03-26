@@ -4,8 +4,8 @@ graph HaasEffect  [[main]]
     output stream float<2> audioOut;
 
     input 
-    {
-        DelayParams.delayParamIn [[ min: 0, max: 10, init: 1, name: "Rch Delay", unit: "ms", step: 0.01 ]];
+    {        
+        DelayParams.delayParamIn [[ min: 0, max: 10, init: 1, name: "Rch Delay", unit: "ms", step: 0.001 ]];
     }
 
     let delay = Delay * 8;// 8x oversamples
