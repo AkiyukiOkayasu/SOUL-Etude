@@ -42,8 +42,8 @@ processor Delay
         readPos = writePos - delaySamples;
     }
 
-
-    let maxDelayLength = 15360;//10ms when BaseSampleRate: 192kHz with 8x oversampling
+    //Maximum delay length in samples (10ms when base sampleRate 192kHz with 8x oversampling: 192000 * 8 * (10/1000) = 15360)
+    let maxDelayLength = 15360;
 
     float[maxDelayLength] buffer;
     wrap<maxDelayLength> readPos, writePos;
