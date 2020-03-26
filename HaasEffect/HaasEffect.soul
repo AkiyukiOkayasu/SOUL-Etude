@@ -38,7 +38,7 @@ processor Delay
 
     event delaySamples(float delayMs)
     {
-        let delaySamples = max (1, int (processor.frequency * (delayMs / 1000.0f)));
+        let delaySamples = max (0, int (processor.frequency * (delayMs / 1000.0f)));
         readPos = writePos - delaySamples;
     }
 
