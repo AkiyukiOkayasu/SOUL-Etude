@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.LookAheadLimiter",
+        "version":          "0.1",
+        "name":             "LookAheadLimiter",
+        "description":      "This is a SOUL Patch called LookAheadLimiter!",
+        "category":         "effect",
+        "manufacturer":     "Your Company Name",
+        "isInstrument":     "false",
+
+        "source":           [ "LookAheadLimiter.soul" ],
+    }
+}
