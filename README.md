@@ -33,3 +33,7 @@ Variable delay with GUI delay controll.
 
 ### [AmbisonicsRotate](AmbisonicsRotate)
 Ambisonics scene rotate.
+
+### [HaasEffect](HaasEffect)  
+μS order delay using 8x oversampling.  
+[Playground](https://soul.dev/lab/?id=b02667d5c6c4de8e195eda75a3865dcd&1=0)  
