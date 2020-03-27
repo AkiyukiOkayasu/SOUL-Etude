@@ -1,3 +1,15 @@
+/*
+    Haas effect
+    Haas effect (or precedence effect) is a binaural psychoacoustical effect.
+    Kind of panning function without adjust amplitude. Using only very short time delay.
+    μS order delay is implemented using 8x oversamplig.
+
+    Input: Mono
+    Output: Stereo
+        Lch: input signal without delay.
+        Rch: input signal with delay.
+*/
+
 graph HaasEffect  [[main]]
 {
     input stream float audioIn;
