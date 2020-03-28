@@ -1,7 +1,8 @@
 # SOUL-Etude  
 [SOUL](https://github.com/soul-lang/SOUL) lang example.
 
-### [SineTone](SineTone)
+## [SineTone](SineTone)
+[Playground](https://soul.dev/lab?id=d2fb7b25ec7aeddce2d2b0c0776cf6ec&0=440)  
 Sine tone generator with GUI frequency controll.  
 
 ### [WhiteNoise](WhiteNoise)
