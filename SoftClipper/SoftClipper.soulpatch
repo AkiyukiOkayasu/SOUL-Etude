@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.akiyukiokayasu.SoftClipper",
+        "version":          "0.1",
+        "name":             "SoftClipper",
+        "description":      "This is a SOUL Patch called SoftClipper!",
+        "category":         "effect",
+        "manufacturer":     "Aki",
+        "isInstrument":     false,
+
+        "source":           [ "SoftClipper.soul" ]
+    }
+}
