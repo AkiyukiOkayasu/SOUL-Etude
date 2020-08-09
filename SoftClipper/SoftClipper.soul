@@ -12,6 +12,9 @@ processor SoftClipper  [[main]]
     input stream float gainDb  [[ name: "InputGain", min: -12.0, max: 12.0, init: 0, step: 0.1, slewRate: 200.0 ]];
     let alpha = 3.0 / 2.0;
 
+    // TODO オーバーサンプリング
+    // graph仕様が更新されてた気がする。要確認。
+
     float softClip(float x)
     {
         if (x >= 1.0) {
