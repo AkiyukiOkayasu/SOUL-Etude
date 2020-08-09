@@ -2,14 +2,13 @@
 {
     "soulPatchV1":
     {
-        "ID":               "com.yourcompany.WhiteNoise",
+        "ID":               "com.akiyukiokayasu.WhiteNoise",
         "version":          "0.1",
         "name":             "WhiteNoise",
         "description":      "This is a SOUL Patch called WhiteNoise!",
         "category":         "effect",
-        "manufacturer":     "Your Company Name",
+        "manufacturer":     "Akiyuki Okayasu",
         "isInstrument":     "false",
-
-        "source":           [ "WhiteNoise.soul" ],
+        "source":           "WhiteNoise.soul"
     }
 }

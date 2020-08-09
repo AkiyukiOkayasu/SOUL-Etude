@@ -1,6 +1,6 @@
 {
   "soulPatchV1": {
-    "ID": "dl",
+    "ID": "com.akiyukiokayasu.delayline",
     "version": "1.0",
     "name": "DelayLine",
     "description": "Simple delay.",

@@ -1,6 +1,6 @@
 {
   "soulPatchV1": {
-    "ID": "phaseInvert",
+    "ID": "com.akiyukiokayasu.phaseinvert",
     "version": "1.0",
     "name": "PhaseInvert",
     "description": "Simple phase invert processor.",

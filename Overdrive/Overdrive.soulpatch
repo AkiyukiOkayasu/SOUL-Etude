@@ -1,6 +1,6 @@
 {
   "soulPatchV1": {
-    "ID": "dl",
+    "ID": "com.akiyukiokayasu.overdrive",
     "version": "1.0",
     "name": "Overdrive",
     "description": "Tanh overdrive.",

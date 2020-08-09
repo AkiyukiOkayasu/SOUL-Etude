@@ -1,6 +1,6 @@
 {
   "soulPatchV1": {
-    "ID": "dl",
+    "ID": "com.akiyukiokayasu.sinetone",
     "version": "1.0",
     "name": "SineTone",
     "description": "Simple sine tone.",

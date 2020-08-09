@@ -1,6 +1,6 @@
 {
   "soulPatchV1": {
-    "ID": "dl",
+    "ID": "com.akiyukiokayasu.sampleplayer",
     "version": "1.0",
     "name": "SamplePlayer",
     "description": "Simple PCM sample player.",

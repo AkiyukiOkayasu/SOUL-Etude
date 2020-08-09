@@ -2,14 +2,13 @@
 {
     "soulPatchV1":
     {
-        "ID":               "com.yourcompany.LookAheadLimiter",
+        "ID":               "com.akiyukiokayasu.LookAheadLimiter",
         "version":          "0.1",
         "name":             "LookAheadLimiter",
         "description":      "This is a SOUL Patch called LookAheadLimiter!",
         "category":         "effect",
-        "manufacturer":     "Your Company Name",
+        "manufacturer":     "Akiyuki Okayasu",
         "isInstrument":     "false",
-
-        "source":           [ "LookAheadLimiter.soul" ],
+        "source":           "LookAheadLimiter.soul"
     }
 }

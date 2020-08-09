@@ -2,14 +2,13 @@
 {
     "soulPatchV1":
     {
-        "ID":               "com.yourcompany.HaasEffect",
+        "ID":               "com.akiyukiokayasu.HaasEffect",
         "version":          "0.1",
         "name":             "HaasEffect",
         "description":      "This is a SOUL Patch called HaasEffect!",
         "category":         "effect",
-        "manufacturer":     "Your Company Name",
+        "manufacturer":     "Akiyuki Okayasu",
         "isInstrument":     "false",
-
-        "source":           [ "HaasEffect.soul" ],
+        "source":           "HaasEffect.soul"
     }
 }
