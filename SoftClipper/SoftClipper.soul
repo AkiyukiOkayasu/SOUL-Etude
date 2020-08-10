@@ -38,3 +38,22 @@ processor SoftClipper  [[main]]
         }
     }
 }
+
+processor DcBlock
+{
+    input stream float audioIn;
+    output stream float audioOut;
+
+    float x1 = 0.0f;// lastInput
+    float y1 = 0.0f;// lastOutput
+
+    void run()
+    {
+        float y = audioIn - x1 + y1 * 0.9997;
+        x1 = audioIn;
+        y1 = y;
+        audioOut << y;
+        advance();
+    }
+
+}
