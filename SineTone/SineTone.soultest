@@ -1,0 +1,3 @@
+## function
+// trueが返ることを期待する
+bool testAddition(){return 1+1 == 2;}
