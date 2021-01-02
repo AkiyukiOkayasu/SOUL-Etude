@@ -10,7 +10,7 @@ processor SoftClipper  [[main]]
     output stream float audioOut;
 
     input stream float gainDb  [[ name: "InputGain", min: -12.0, max: 12.0, init: 0, step: 0.1, slewRate: 200.0 ]];
-    let alpha = 3.0 / 2.0;
+    let alpha = 3.0f / 2.0f;
 
     // TODO オーバーサンプリング
     // graph仕様が更新されてた気がする。要確認。
@@ -22,14 +22,13 @@ processor SoftClipper  [[main]]
         } else if (x <= -1.0) {
             return -1.0;
         } else {
-            return alpha * (x - pow(x, 3.0) / 3.0);
+            return alpha * (x - pow(x, 3.0f) / 3.0f);
         }
     }
 
     void run()
     {
-        loop
-        {
+        loop{
             let gain = soul::dBtoGain (gainDb);
             float v = audioIn * gain;
             v = softClip(v);
@@ -44,12 +43,13 @@ processor DcBlock
     input stream float audioIn;
     output stream float audioOut;
 
-    float x1 = 0.0f;// lastInput
-    float y1 = 0.0f;// lastOutput
+    float x1 = 0.0;// lastInput
+    float y1 = 0.0;// lastOutput
+    const float amp = 0.9997f;
 
     void run()
     {
-        float y = audioIn - x1 + y1 * 0.9997;
+        let y = audioIn - x1 + y1 * amp;
         x1 = audioIn;
         y1 = y;
         audioOut << y;
