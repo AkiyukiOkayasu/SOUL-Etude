@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.yourcompany.DoubleSoftClipper",
+        "version":          "0.1",
+        "name":             "DoubleSoftClipper",
+        "description":      "This is a SOUL Patch called DoubleSoftClipper!",
+        "category":         "effect",
+        "manufacturer":     "Your Company Name",
+        "isInstrument":     false,
+
+        "source":           [ "DoubleSoftClipper.soul" ]
+    }
+}
