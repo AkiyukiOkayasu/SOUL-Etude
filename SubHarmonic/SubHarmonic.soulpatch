@@ -1,0 +1,15 @@
+
+{
+    "soulPatchV1":
+    {
+        "ID":               "com.akiyukiokayasu.SubHarmonic",
+        "version":          "0.1",
+        "name":             "SubHarmonic",
+        "description":      "Sub harmonic generator",
+        "category":         "effect",
+        "manufacturer":     "Akiyuki Okayasu",
+        "isInstrument":     false,
+
+        "source":           [ "SubHarmonic.soul" ]
+    }
+}

@@ -1,0 +1,80 @@
+
+/**
+    This is an auto-generated SOUL patch template.
+    This example code simply performs a simple gain between its input
+    and output. Now it's your turn to build this up into a real effect!
+*/
+graph MainProcessor [[main]]
+{
+    input stream float in;
+    output stream float out;
+
+    let 
+    {
+        // TODO When a processor index operation is added to SOUL, declare Change as an array and reimplement it.
+        change_1 = Change;
+        change_2 = Change;
+        edgeCounter = EdgeCounter;
+    }
+
+    connection
+    {
+        in -> change_1.in;
+        change_1.out -> change_2.in;
+        change_2.out -> edgeCounter.in;
+        edgeCounter.out -> out;
+    }
+}
+
+/**
+    Processor with the same function as Cycling'74 Max change~ object
+*/
+processor Change
+{
+    input stream float in;
+    output stream float out;
+
+    float lastInput = 0.0;
+
+    void run()
+    {
+        loop
+        {
+            float a = 0.0;
+            if (in > lastInput) {
+                a = 1.0;
+            } else if(in < lastInput) {
+                a = -1.0;
+            }
+            lastInput = in;
+            out << a;
+            advance();
+        }
+    }
+
+}
+
+/**
+    Edge counter
+*/
+processor EdgeCounter
+{
+    input stream float in;
+    output stream float out;
+  
+    float value = 1.0;    
+
+    void run()
+    {
+        loop
+        {
+            if (in > 0.5) {
+                // pos edge                
+                value *= -1.0f;                
+            } 
+
+            out << value;
+            advance();
+        }
+    }
+}
