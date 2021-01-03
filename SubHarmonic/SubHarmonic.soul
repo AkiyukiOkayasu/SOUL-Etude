@@ -1,9 +1,3 @@
-
-/**
-    This is an auto-generated SOUL patch template.
-    This example code simply performs a simple gain between its input
-    and output. Now it's your turn to build this up into a real effect!
-*/
 graph MainProcessor [[main]]
 {
     input stream float in;
@@ -14,15 +8,16 @@ graph MainProcessor [[main]]
         // TODO When a processor index operation is added to SOUL, declare Change as an array and reimplement it.
         change_1 = Change;
         change_2 = Change;
-        edgeCounter = EdgeCounter;
+        pitchDivider = PitchDivider;
     }
 
     connection
     {
         in -> change_1.in;
+                
         change_1.out -> change_2.in;
-        change_2.out -> edgeCounter.in;
-        edgeCounter.out -> out;
+        change_2.out -> pitchDivider.in;        
+        pitchDivider.out -> out;
     }
 }
 
@@ -55,9 +50,9 @@ processor Change
 }
 
 /**
-    Edge counter
+    PitchDivider
 */
-processor EdgeCounter
+processor PitchDivider
 {
     input stream float in;
     output stream float out;
